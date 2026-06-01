@@ -1,0 +1,158 @@
+:root {
+  --bg: #faf8f5;
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #e3e0db;
+  --accent: #1a1a1a;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  font-feature-settings: "ss01", "cv11";
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1.25rem;
+}
+
+#app {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* Display (projector) route fills the viewport instead of the centered column. */
+body[data-route="display"] {
+  padding: 0;
+  display: block;
+}
+body[data-route="display"] #app {
+  max-width: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.25rem;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 2.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+input, button {
+  font: inherit;
+  color: inherit;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+input:focus {
+  border-color: var(--ink);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+  transition: opacity 0.15s;
+}
+
+button:hover:not(:disabled) { opacity: 0.85; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.error {
+  color: #b3261e;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.chart {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.chart h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 2rem 0 0.75rem;
+}
+
+.chart h2:first-child { margin-top: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+td {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+td:first-child {
+  color: var(--muted);
+  width: 35%;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+.glyph {
+  font-size: 1.05rem;
+  margin-right: 0.4rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
