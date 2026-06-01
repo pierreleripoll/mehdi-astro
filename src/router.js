@@ -3,7 +3,7 @@ import ControlView from './views/ControlView.vue'
 import DisplayView from './views/DisplayView.vue'
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', redirect: '/control' },
     { path: '/control', name: 'control', component: ControlView },

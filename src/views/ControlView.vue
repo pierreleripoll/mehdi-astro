@@ -9,6 +9,9 @@ import { useChartStore } from '../stores/chart.js'
 const store = useChartStore()
 const error = ref('')
 
+// URL de la vue projecteur, en tenant compte du base path (GitHub Pages).
+const displayUrl = import.meta.env.BASE_URL + 'display'
+
 async function handleSubmit(input) {
   error.value = ''
   try {
@@ -40,7 +43,7 @@ async function handleSubmit(input) {
     <h1>Thème natal</h1>
     <p class="sub">Saisissez votre date, heure et lieu de naissance.</p>
     <p class="sub">
-      <a href="/display" target="_blank" rel="noopener">Ouvrir la vue projecteur ↗</a>
+      <a :href="displayUrl" target="_blank" rel="noopener">Ouvrir la vue projecteur ↗</a>
     </p>
 
     <BirthForm @submit="handleSubmit" />
