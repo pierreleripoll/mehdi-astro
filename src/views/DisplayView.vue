@@ -77,8 +77,8 @@ onUnmounted(() => {
 .wheel-wrap {
   position: relative;
   z-index: 1;
-  width: min(96vw, 96vh);
-  height: min(96vw, 96vh);
+  width: min(50vh, 96vw);
+  height: min(50vh, 96vw);
 }
 
 .waiting {
