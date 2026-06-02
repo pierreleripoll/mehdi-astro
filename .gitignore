@@ -3,3 +3,7 @@ dist
 .npm-cache
 .DS_Store
 *.log
+
+# heavy local video files — the background video is uploaded at runtime and
+# stored in the browser (IndexedDB), never committed
+/mehdi_astro*.mp4

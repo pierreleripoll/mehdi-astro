@@ -178,6 +178,9 @@ const angleMarkers = computed(() => {
     :viewBox="`0 0 ${SIZE} ${SIZE}`"
     xmlns="http://www.w3.org/2000/svg"
   >
+    <!-- solid white disc so the chart reads cleanly over a background video -->
+    <circle :cx="CX" :cy="CY" :r="R_OUTER + 8" class="backdrop" />
+
     <!-- zodiac ring background segments -->
     <g class="zodiac">
       <path
@@ -272,6 +275,10 @@ const angleMarkers = computed(() => {
   width: 100%;
   height: auto;
   margin: 0 auto 2rem;
+}
+
+.backdrop {
+  fill: #fff;
 }
 
 .zodiac-seg {
